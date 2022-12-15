@@ -22,6 +22,18 @@
 
         <button type="submit">Login</button>
     </div>
+    <%
+        if (request.getMethod().equalsIgnoreCase("POST")){
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+
+            if(username.equalsIgnoreCase("username") && password.equalsIgnoreCase("password")){
+                response.sendRedirect(("/profile.jsp"));
+            } else {
+                response.sendRedirect(("/login.jsp"));
+            }
+        }
+    %>
 </form>
 
 
