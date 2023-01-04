@@ -1,12 +1,3 @@
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//
-//public class HelloWorldServlet extends HttpServlet {
-//    protected void doGet(HttpServletRequest req, HttpServletResponse res) {
-//
-//    }
-//}
 
 import java.io.*;
 import javax.servlet.*;
@@ -26,10 +17,5 @@ public class HelloWorldServlet extends HttpServlet {
         out.printf("<h1>Hello %s</h1>", cust);
         out.println("Hello, world");
         out.println("Hey there");
-
-//        String query = request.getParameter("some");
-//        PrintWriter out = response.getWriter();
-//        out.println("<h1>Hello, World!</h1>");
     }
-
 }
