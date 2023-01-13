@@ -6,32 +6,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="partials/navbar.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
+
 <form action="/login.jsp" method="post">
-    <div holder="Enter Username" name="username" required>
+    <div class="container">
+        <label>Username : </label>
+        <input type="text" placeholder="Enter Username" name="username" required>
 
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-
+        <label>Password : </label>
+        <input type="password" placeholder="Enter Password" name="password">
         <button type="submit">Login</button>
-    </div>
-    <%
-        if (request.getMethod().equalsIgnoreCase("POST")){
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-
-            if(username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("password")){
-                response.sendRedirect(("/profile.jsp"));
-            } else {
-                response.sendRedirect(("/login.jsp"));
+        <%
+            if (request.getMethod().equalsIgnoreCase("POST")) {
+                String name = request.getParameter("username");
+                String password = request.getParameter("password");
+                if (name.equals("admin") && password.equals("password")) {
+                    response.sendRedirect("/profile.jsp");
+                }
             }
-        }
-    %>
+        %>
+    </div>
 </form>
 
 </body>
